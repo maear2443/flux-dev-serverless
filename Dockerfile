@@ -26,7 +26,9 @@ RUN pip3 install --no-cache-dir \
     pillow \
     hf-transfer \
     runpod \
-    huggingface-hub
+    huggingface-hub \
+    replicate \
+    requests
 
 # HF Transfer 활성화
 ENV HF_HUB_ENABLE_HF_TRANSFER=1
@@ -34,7 +36,10 @@ ENV HF_HUB_ENABLE_HF_TRANSFER=1
 # 작업 디렉토리
 WORKDIR /app
 
-# Handler 스크립트만 복사 (모델 다운로드 스크립트는 제외)
-COPY handler.py .
+# Handler 스크립트 복사 (여러 옵션 제공)
+COPY handler*.py ./
 
-CMD ["python3", "handler.py"]
+# 기본 핸들러 설정 (가장 가벼운 API 버전)
+ENV HANDLER_FILE=handler_api.py
+
+CMD ["sh", "-c", "python3 ${HANDLER_FILE}"]
