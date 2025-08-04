@@ -9,7 +9,6 @@ transformers>=4.35.0
 accelerate
 sentencepiece
 einops
-einops_exts
 opencv-python-headless
 pillow
 hf-transfer
