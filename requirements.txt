@@ -1,0 +1,18 @@
+# FLUX Dev Serverless Requirements
+# 로컬 테스트용 (Docker 이미지에는 이미 포함됨)
+
+torch>=2.0.0
+torchvision
+torchaudio
+diffusers>=0.24.0
+transformers>=4.35.0
+accelerate
+sentencepiece
+einops
+einops_exts
+opencv-python-headless
+pillow
+hf-transfer
+runpod
+huggingface-hub
+python-dotenv  # 환경 변수 관리용
