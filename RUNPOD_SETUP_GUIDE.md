@@ -33,10 +33,12 @@
 - **Execution Timeout**: `300` 초 (5분)
 - **Flashboot**: 활성화 (빠른 시작)
 
-### Environment Variables (선택사항)
+### Environment Variables (중요!)
 ```
+HF_TOKEN=your-huggingface-token-here
 HF_HUB_ENABLE_HF_TRANSFER=1
 ```
+**주의**: HF_TOKEN은 FLUX.1-dev 모델 다운로드에 필수입니다!
 
 ### Advanced Settings
 - **Scaling Type**: "Queue Delay"

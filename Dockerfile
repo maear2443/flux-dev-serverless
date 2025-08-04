@@ -31,21 +31,10 @@ RUN pip3 install --no-cache-dir \
 # HF Transfer 활성화
 ENV HF_HUB_ENABLE_HF_TRANSFER=1
 
-# 빌드 시 HF 토큰 받기 (빌드 후 삭제됨)
-ARG HF_TOKEN
-ENV HF_TOKEN=$HF_TOKEN
-
 # 작업 디렉토리
 WORKDIR /app
 
-# 모델 다운로드 스크립트
-COPY download_models.py .
-RUN python3 download_models.py && rm download_models.py
-
-# HF 토큰 환경 변수 제거 (보안)
-ENV HF_TOKEN=""
-
-# Handler 스크립트
+# Handler 스크립트만 복사 (모델 다운로드 스크립트는 제외)
 COPY handler.py .
 
 CMD ["python3", "handler.py"]
