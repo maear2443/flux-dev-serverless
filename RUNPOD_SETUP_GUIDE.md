@@ -15,7 +15,7 @@
 - **Select Template**: "Custom" 선택
 
 ### Container Configuration
-- **Container Image**: `maear2444/flux-dev-serverless:latest`
+- **Container Image**: `maear/flux-dev-serverless:latest`
 - **Container Registry Credentials**: 필요 없음 (Public 이미지)
 - **Container Disk**: `50 GB`
 - **Volume Disk**: 필요 없음
